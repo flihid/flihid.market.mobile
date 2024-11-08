@@ -50,3 +50,38 @@ Saya mengimplementasikan `InkWell` untuk mendeteksi aksi ketika tombol ditekan, 
 6) Terakhir saya melakukan `add`, `commit`, dan `push` ke GitHub untuk mengunggah kode dan dokumentasi proyek ke repositori.
 
 </details>
+
+<details>
+  <summary><b>Tugas 8</b></summary>
+
+1. **Apa kegunaan `const` di Flutter? Jelaskan apa keuntungan ketika menggunakan `const` pada kode Flutter. Kapan sebaiknya kita menggunakan `const`, dan kapan sebaiknya tidak digunakan?**
+
+`Const` dalam Flutter digunakan untuk mendeklarasikan nilai atau widget yang tidak berubah selama *runtime*. Dengan kata lain, jika suatu widget atau variabel menggunakan `const`, nilai tersebut sudah tetap sejak awal dan tidak akan berubah sepanjang siklus hidup aplikasi. Hal ini sangat berguna karena memungkinkan Flutter untuk melakukan optimisasi, terutama dalam hal efisiensi dan performa. Dengan penggunaan `const`, Flutter dapat mendeteksi bahwa objek tersebut selalu sama sehingga tidak perlu membuat ulang objek tersebut setiap kali aplikasi perlu menggunakannya kembali, yang menghemat sumber daya dan mempercepat *rendering*.
+
+Keuntungan dari penggunaan `const` adalah peningkatan performa dan efisiensi memori karena Flutter tidak perlu membuat ulang elemen yang sudah didefinisikan sebagai konstan. Ini sangat penting dalam aplikasi yang memiliki banyak elemen UI statis atau tidak berubah. Sebaiknya `const` digunakan ketika kita yakin nilai atau widget tersebut tidak akan mengalami perubahan sama sekali selama aplikasi berjalan, seperti pada elemen UI yang statis. Namun, jika elemen tersebut bersifat dinamis atau berubah-ubah, penggunaan `const` tidak diperlukan dan bahkan bisa menghambat fleksibilitas aplikasi.
+
+2. **Jelaskan dan bandingkan penggunaan *Column* dan *Row* pada Flutter. Berikan contoh implementasi dari masing-masing layout widget ini!**
+
+Dalam Flutter, *Column* dan *Row* adalah widget dasar yang digunakan untuk mengatur tata letak elemen secara vertikal dan horizontal. Widget *Column* menyusun anak-anaknya secara vertikal dari atas ke bawah, sehingga cocok digunakan ketika kita ingin menampilkan elemen dalam satu kolom. Sebaliknya, *Row* menyusun anak-anaknya secara horizontal dari kiri ke kanan, sehingga cocok untuk tata letak elemen dalam satu baris. Keduanya sangat fleksibel dan sering digunakan bersama dengan widget lain seperti *Expanded* dan *Flexible* untuk mengatur ruang antar-elemen dan menyesuaikan ukuran komponen dalam tata letak yang responsif.
+
+Sebagai contoh, implementasi sederhana untuk *Column* dapat berupa kode berikut: `Column(children: [Text('Item 1'), Text('Item 2')])`, yang akan menampilkan teks "Item 1" di atas "Item 2". Sedangkan untuk *Row*, kode implementasi sederhana adalah `Row(children: [Text('Item 1'), Text('Item 2')])`, yang akan menampilkan "Item 1" di samping "Item 2". Kedua widget ini memungkinkan pengembang untuk menciptakan *interface* pengguna yang dinamis dan mudah disesuaikan di aplikasi Flutter.
+
+3. **Sebutkan apa saja elemen input yang kamu gunakan pada halaman *form* yang kamu buat pada tugas kali ini. Apakah terdapat elemen input Flutter lain yang tidak kamu gunakan pada tugas ini? Jelaskan!**
+
+Pada halaman form yang saya buat kali ini, saya menggunakan tiga elemen input utama yaitu `TextFormField` untuk mengumpulkan data nama, jumlah (amount), dan deskripsi dari item yang ditambahkan. Setiap elemen ini memiliki validasi untuk memastikan bahwa input yang diberikan sesuai dengan tipe data yang diharapkan dan tidak boleh kosong. Selain itu, form ini juga dilengkapi dengan tombol "Save" untuk menyimpan data input.
+
+Ada beberapa elemen input Flutter lain yang tidak saya gunakan dalam tugas ini, seperti `Checkbox`, `Radio`, `Switch`, dan `DropdownButton`. Elemen-elemen ini biasanya digunakan untuk pilihan-pilihan seleksi, seperti memilih opsi ya atau tidak, atau memilih satu dari beberapa pilihan.
+
+4. **Bagaimana cara kamu mengatur tema (theme) dalam aplikasi Flutter agar aplikasi yang dibuat konsisten? Apakah kamu mengimplementasikan tema pada aplikasi yang kamu buat?**
+
+Untuk mengatur tema dalam aplikasi Flutter agar konsisten, saya menggunakan `ThemeData` di dalam widget `MaterialApp`. Dengan `ThemeData`, saya bisa mengatur elemen-elemen seperti skema warna, gaya teks, dan bentuk widget yang digunakan di seluruh aplikasi. Ini memungkinkan saya untuk mendefinisikan warna utama (`colorScheme.primary`) dan warna sekunder sehingga seluruh komponen aplikasi mengikuti skema warna yang seragam dan tampilan menjadi konsisten.
+
+Pada aplikasi yang saya buat, saya telah mengimplementasikan tema dengan mengatur `colorScheme` di `ThemeData` untuk memastikan aplikasi memiliki nuansa warna yang sesuai di setiap halaman dan komponen, seperti AppBar dan tombol, tanpa perlu mengatur ulang tema di setiap widget secara manual.
+
+5. **Bagaimana cara kamu menangani navigasi dalam aplikasi dengan banyak halaman pada Flutter?**
+
+Untuk menangani navigasi dalam aplikasi Flutter yang memiliki banyak halaman, saya menggunakan metode `Navigator.push` dan `Navigator.pop`. `Navigator.push` digunakan untuk menambahkan halaman baru ke dalam stack navigasi, sehingga memungkinkan pengguna untuk berpindah ke halaman lain, sementara `Navigator.pop` digunakan untuk kembali ke halaman sebelumnya dengan menghapus halaman terkini dari stack. Metode ini memungkinkan navigasi antar halaman yang sederhana dan efisien.
+
+Selain itu, pada `MaterialApp`, saya bisa mendefinisikan `routes` untuk mendukung navigasi berbasis nama, yang membuat pengaturan navigasi lebih terstruktur dan memudahkan pemeliharaan. Dengan pendekatan ini, saya cukup memanggil nama rute yang telah didefinisikan ketika ingin berpindah halaman, tanpa perlu mengatur ulang halaman tujuan setiap kali berpindah, sehingga manajemen halaman lebih konsisten dalam aplikasi yang kompleks.
+
+</details>
