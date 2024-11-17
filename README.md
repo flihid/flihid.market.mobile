@@ -87,7 +87,7 @@ Selain itu, pada `MaterialApp`, saya bisa mendefinisikan `routes` untuk mendukun
 </details>
 
 <details>
-  <summary><b>Tugas 8</b></summary>
+  <summary><b>Tugas 9</b></summary>
 
 1. **Jelaskan mengapa kita perlu membuat model untuk melakukan pengambilan ataupun pengiriman data JSON? Apakah akan terjadi error jika kita tidak membuat model terlebih dahulu?**
 
